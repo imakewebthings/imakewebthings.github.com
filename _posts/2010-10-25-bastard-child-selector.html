@@ -1,0 +1,211 @@
+---
+layout: default
+title: Bastard Child Selector
+tldr: Embrace the child selector.  Throw out most of your descendent selectors.
+---
+
+<p>The CSS child selector gets a bad rap.  Most web developers rarely give it a thought and favor instead the descendant selector.  But why?</p>
+
+<h2>What is the Child Selector?</h2>
+
+<p>The most simple answer: <code>&gt;</code></p>
+
+<p>That&rsquo;s it, the greater-than symbol.  In a CSS selector it denotes a direct child and only a direct child.  A selector of <code>div > p</code> will match all <code>p</code> elements that are direct children of a <code>div</code> element.</p>
+
+<p>Contrast that with the <strong>descendant selector</strong>, represented by a space.  A selector of <code>div p</code> matches all <code>p</code> elements that are descendants of <code>div</code>, no matter how far down the DOM tree the <code>p</code> exists.  Maybe the <code>p</code> is inside an <code>li</code> within a <code>ul</code> within a <code>section</code> within a <code>div</code>?  Still matches.  The child selector would not.</p>
+
+<h2>Prior Art</h2>
+
+<p>Several articles have been published this year on CSS performance &mdash; how browsers read CSS selectors and render elements.  Chris Coyier <a href="http://css-tricks.com/efficiently-rendering-css/" rel="external">threw down</a> in May with a rundown of best practices, and Jonathan Snook recently <a href="http://snook.ca/archives/html_and_css/css-parent-selectors" rel="external">broached the subject</a> with an explanation of why CSS doesn&rsquo;t include a parent selector.  The meat of these recommendations come back to a <a href="http://code.google.com/speed/page-speed/docs/rendering.html#UseEfficientCSSSelectors">guide by Google</a> and an aging but still relevant <a href="https://developer.mozilla.org/en/Writing_Efficient_CSS" rel="external">guide by Dave Hyatt</a> from his Netscape days.</p>
+
+<p>Read these articles, take in the lessons, and let&rsquo;s look at&hellip;</p>
+
+<h2>An Example</h2>
+<style type="text/css">
+	.puffin-example {
+		background:#ccc;
+		color:#333 !important;
+		padding:10px;
+		font-size:14px !important;
+		font-family:Helvetica, Arial, sans-serif !important;
+		overflow:hidden;
+		margin-bottom:16px;
+	}
+	
+	.puffin-example > p {
+		margin:0 !important;
+		padding:8px 0 !important;
+	}
+	
+	.puffin-example > h2 {
+		font-size:24px !important;
+		color:#000 !important;
+		margin:0 !important;
+		font-family:Helvetica, Arial, sans-serif !important;
+		text-shadow:none !important;
+	}
+	
+	.factoid {
+		float:left;
+		width:160px;
+		padding:10px;
+		font-size:12px;
+		background:#eee;
+		margin:8px 10px 10px 0;
+	}
+	
+	.factoid h3 {
+		color:#c00 !important;
+		font-size:18px !important;
+		margin:0 0 8px 0 !important;
+		font-family:Helvetica, Arial, sans-serif !important;
+		text-shadow:none !important;
+	}
+	
+	.factoid p {
+		margin:0 0 8px 0 !important;
+	}
+	
+	.factoid a {
+		display:block;
+		margin:0;
+		text-align:right;
+		color:#08c !important;
+		background:transparent !important;
+	}
+</style>
+
+<section class="puffin-example">
+	<h2>Puffins</h2>
+	<p>Puffins are any of three small species of auk (or alcids) in the bird genus Fratercula with a brightly coloured beak during the breeding season. These are pelagic seabirds that feed primarily by diving in the water. They breed in large colonies on coastal cliffs or offshore islands, nesting in crevices among rocks or in burrows in the soil. Two species, the Tufted Puffin and Horned Puffin, are found in the North Pacific Ocean, while the Atlantic Puffin, is found in the North Atlantic Ocean.</p>
+	<aside class="factoid">
+		<h3>Fun Fact</h3>
+		<p>The fresh heart of a puffin is eaten raw as a traditional Icelandic delicacy.</p>
+		<a href="#">Learn More</a>
+	</aside>
+	<p>All puffin species have predominantly black or black and white plumage, a stocky build, and large beaks. They shed the colourful outer parts of their bills after the breeding season, leaving a smaller and duller beak. Their short wings are adapted for swimming with a flying technique under water. In the air, they beat their wings rapidly (up to 400 times per minute) in swift flight, often flying low over the ocean&rsquo;s surface.</p>
+</section>
+
+<p><small>Content ripped straight from <a href="http://en.wikipedia.org/wiki/Puffin" rel="external">Wikipedia</a>.</small></p>
+
+<p>The source for the Fun Fact block might reasonably look like this:</p>
+
+{% highlight html %}
+<aside class="factoid">
+  <h3>Fun Fact</h3>
+  <p>The fresh heart of a puffin is eaten raw as a traditional Icelandic delicacy.</p>
+  <a href="#">Learn More</a>
+</aside>
+{% endhighlight %}
+
+<p>And the CSS:</p>
+
+{% highlight css %}
+.factoid {
+  float:left;
+  width:160px;
+  padding:10px;
+  font-size:12px;
+  background:#eee;
+  margin:8px 10px 10px 0;
+}
+	
+.factoid h3 {
+  color:#c00;
+  font-size:18px;
+  margin:0 0 8px 0;
+}
+	
+.factoid p {
+  margin:0 0 8px 0;
+}
+
+.factoid a {
+  display:block;
+  margin:0;
+  text-align:right;
+  color:#08c;
+}
+{% endhighlight %}
+
+<p>From now on let&rsquo;s try this:  Every time you would nonchalantly write a descendant selector, instead write it as a child selector by default.  A lot of the descendants we currently write could just as easily be childs, and in some of those cases you really <em>want</em> them to be.  If after some time and thought you realize that a descendant selector is what you want, need, and intend, go ahead and change it.  Here is our revised CSS:</p>
+
+{% highlight css %}
+.factoid { }
+	
+.factoid > h3 { }
+	
+.factoid > p { }
+
+.factoid > a { }	
+{% endhighlight %}
+
+<p>The web development community retains the nasty habit of descendant selectors for one reason: IE6.  IE7+ and every other modern browser support the child selector.  While many shops out there have stopped &ldquo;supporting&rdquo; the ancient beast, years of ignoring the child selector have left their mark on our collective stylesheet writing standards. Changing this habit yields a few advantages.</p>
+
+<h2>Performance</h2>
+
+<p>If we focused on CSS rendering performance and rewrote our example by biblically following the Google and Mozilla articles, we would see:</p>
+
+{% highlight html %}
+<aside class="factoid">
+  <h3 class="factoid-header">Fun Fact</h3>
+  <p class="factoid-content">The fresh heart of a puffin is eaten raw as a traditional Icelandic delicacy.</p>
+  <a class="factoid-cta" href="#">Learn More</a>
+</aside>
+{% endhighlight %}
+
+{% highlight css %}
+.factoid { }
+	
+.factoid-header { }
+	
+.factoid-content { }
+
+.factoid-cta { }
+{% endhighlight %}
+
+<p>Here we have a nasty case of <a href="http://www.steveworkman.com/html5-2/standards/2009/classitis-the-new-css-disease/" rel="external">classitis</a> weighing down the markup.  Without going into the details of what makes classitis so heinous, let&rsquo;s discard this approach.</p>
+
+<p>If you read the performance articles you would know that the descendant selector will match the rightmost element, say our <code>a</code> in <code>.factoid a</code>, and look at <em>every element</em> up the tree looking for <code>.factoid</code> until it finds a match or hits the <code>body</code>.  Using the child selector will only look one level up and stop if <code>.factoid</code> isn&rsquo;t found. This effects more than our factoid links.  The performance savings are realized for <em>every <code>a</code> element in the document</em>.</p>
+
+<p>But here&rsquo;s the deal: CSS performance is rarely an issue for modern websites.  If you&rsquo;re building a static site, the speed of modern devices and browsers will cover up the more egregious selectors.  Web applications making constant and rapid DOM changes may see gains in slower handheld devices or older browsers. But there are better reasons to move towards more child selectors than just performance.</p>
+
+<h2>Preserving Defaults &amp; Future Proofing</h2>
+<p>Let&rsquo;s turn back to our example.  Maybe we&rsquo;re building this site for a client.  The client swears factoids will follow this structure: Title, short sentence, link out.  Done.  In stone.  So we write the CSS in our original form using descendant selectors, ship it and everything is dandy.</p>
+<p>Six months later, the client decides they want to link up the word &ldquo;Icelandic&rdquo; to an article on Bj&ouml;rk.  And this is what they see:</p>
+
+<section class="puffin-example">
+	<h2>Puffins</h2>
+	<p>Puffins are any of three small species of auk (or alcids) in the bird genus Fratercula with a brightly coloured beak during the breeding season. These are pelagic seabirds that feed primarily by diving in the water. They breed in large colonies on coastal cliffs or offshore islands, nesting in crevices among rocks or in burrows in the soil. Two species, the Tufted Puffin and Horned Puffin, are found in the North Pacific Ocean, while the Atlantic Puffin, is found in the North Atlantic Ocean.</p>
+	<aside class="factoid">
+		<h3>Fun Fact</h3>
+		<p>The fresh heart of a puffin is eaten raw as a traditional <a href="#">Icelandic</a> delicacy.</p>
+		<a href="#">Learn More</a>
+	</aside>
+	<p>All puffin species have predominantly black or black and white plumage, a stocky build, and large beaks. They shed the colourful outer parts of their bills after the breeding season, leaving a smaller and duller beak. Their short wings are adapted for swimming with a flying technique under water. In the air, they beat their wings rapidly (up to 400 times per minute) in swift flight, often flying low over the ocean&rsquo;s surface.</p>
+</section>
+
+<p><strong>Woops.</strong></p>
+<p>I&rsquo;ll admit, this is an elementary example, and a problem we can easily foresee, but think about the implications when applied to larger layout elements.  Sure, your biggest client&rsquo;s left sidebar may hold nothing but second-level navigation today, but who&rsquo;s stopping it from holding a Twitter widget, two ad units, and a list of related posts down the road?  In our scenario the client has assured us that a Factoid structure will not change. The more realistic scenario: Nobody is thinking about these things.  They&rsquo;re too concerned with how everything looks now.</p>
+
+<p>How many times have you found yourself writing something like this?</p>
+
+{% highlight css %}
+a {
+  color:#00c;
+}
+
+.factoid a {
+  color:#c00;
+}
+
+.factoid p a {
+  color:#00c;
+}
+{% endhighlight %}
+
+<p>Avoiding this mess &mdash; defining defaults, overriding them, and then re-overriding them again &mdash; would have once been solved by adding a class to the link.  With our approach of using a child selector we avoid that extra markup cruft and preserve the defaults as we move down the DOM tree.  Along with the potential performance gains, I hope this is enough to get you to move away from lazily pressing the space key and give the child selector a chance.</p>
+
+<h2>Extra Tidbit</h2>
+
+<p><em>The ultimate test of perfectly preserved default styles?</em>  Take all your main content and erase everything else.  All the layout structure: erase it. Just leave your naked content, then apply your main stylesheet.  Does it look exactly the same (fonts, margins, colors, etc.) as the in-page content, except now full width and aligned left?  Congratulations.  Personally, I&rsquo;ve never been able to get there, but I keep aiming.</p>

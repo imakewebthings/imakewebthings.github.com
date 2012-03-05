@@ -1,0 +1,31 @@
+@mixin transform-origin($x, $y) {
+	-webkit-transform-origin:$x $y;
+	-moz-transform-origin:$x $y;
+	-ms-transform-origin:$x $y;
+	-o-transform-origin:$x $y;
+	transform-origin:$x $y;
+}
+
+@mixin transform($val) {
+	-webkit-transform:$val;
+	-moz-transform:$val;
+	-o-transform:$val;
+	-ms-transform:$val;
+	transform:$val;
+}
+
+@mixin transition($prop, $speed, $easing) {
+	-webkit-transition:$prop $speed $easing;
+	-moz-transition:$prop $speed $easing;
+	-o-transition:$prop $speed $easing;
+	-ms-transition:$prop $speed $easing;
+	transition:$prop $speed $easing;
+}
+
+@mixin transition-transform($speed, $easing) {
+	-webkit-transition:-webkit-transform $speed $easing;
+	-moz-transition:-moz-transform $speed $easing;
+	-ms-transition:-ms-transform $speed $easing;
+	-o-transition:-o-transform $speed $easing;
+	-webkit-transition:transform $speed $easing;
+}

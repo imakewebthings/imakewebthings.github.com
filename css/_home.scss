@@ -1,0 +1,87 @@
+.home {
+	width:300px;
+}
+
+.projects {
+	list-style:none;
+	padding-left:0;
+
+	> li {
+		padding:0;
+	}
+
+	a {
+		display:block;
+		font-size:24px;
+		line-height:48px;
+		height:48px;
+		color:#fff;
+		text-decoration:none;
+		text-align:center;
+		margin-bottom:1px;
+	}
+}
+
+.deck {
+	background:$blueComp;
+	font-family:"Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	font-weight:bold;
+}
+
+.waypoints {
+	background:$greenComp;
+	font-family:Cambria, Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+}
+
+.and-more {
+	background:$tango;
+}
+
+.contact {
+	list-style:none;
+	width:100%;
+	overflow:hidden;
+	padding-left:0;
+
+	> li {
+		float:left;
+		margin-left:14px;
+
+		&:first-child {
+			margin-left:0;
+		}
+
+		> a {
+			display:block;
+			width:64px;
+			padding-top:64px;
+			text-align:center;
+			font-size:12px;
+			color:#888;
+			overflow:hidden;
+			background-repeat:no-repeat;
+
+			&:hover, &:focus {
+				color:$tango;
+				text-decoration:none;
+			}
+		}
+	}
+}
+
+.skype {
+	background-image:url(/images/speach_bubble.png);
+}
+
+.email {
+	background-image:url(/images/mail.png);
+}
+
+.twitter {
+	background-image:url(/images/twitter.png);
+}
+
+.facebook {
+	background-image:url(/images/facebook.png);
+}
+

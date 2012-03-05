@@ -1,0 +1,29 @@
+---
+layout: default
+title: jQuery Waypoints
+tldr: I made a plugin for firing events when users scroll to an element.
+---
+
+<p>Last week I pushed a lit­tle jQuery plu­gin to GitHub called <a href="http://imakewebthings.github.com/jquery-waypoints" rel="external">jQuery Way­points</a> that gives devel­op­ers an easy hook into fir­ing a func­tion when users scroll to any given ele­ment.  Thanks to some love from the <a href="http://forrst.com">Forrst</a> com­mu­nity and a brief stint in the Top 10 on <a href="http://hackerne.ws/item?id=2255982" rel="external">Hacker News</a>, it’s gained the atten­tion of a few eyes.  I’m just glad that <em>some­body</em> found it use­ful. Now that I’ve had a chance to process the imme­di­ate feed­back and fix a bug or two, I’d like to look back on what I learned.</p>
+
+<h2>His­tory</h2>
+
+<p>Way­points started as a scrappy <a href="http://mootools.net" rel="external">MooTools</a> class that I wrote for a friend to use in one of his projects.  The code, aside from being a lit­tle gross, had the sole pur­pose of snap­ping the user’s scroll posi­tion to the top of a sec­tion when the user scrolled close enough to it.  I still don’t feel com­fort­able inter­rupt­ing a user’s nat­ural scroll to force them to a dif­fer­ent one, but the con­cept of using scroll prox­im­ity stuck with me.</p>
+
+<h2>Prior Art</h2>
+
+<p>Remy Sharp’s <a href="http://remysharp.com/2009/01/26/element-in-view-event-plugin/" rel="external">inview</a> plu­gin is another great way to tie user scrolling to events, but only con­cerns itself with two ele­ment posi­tions: enter­ing and leav­ing the view­port.  If those are the only ele­ment posi­tions you want to deal with, I still think inview is a supe­rior plugin.</p>
+
+<h2>GitHub = Pleasure</h2>
+
+<p>This was my first <em>real</em> open source pub­lic project.  A lot of my career agency work has been for large clients that I prob­a­bly can’t even name under <span class="caps">NDA</span>.  And my one <a href="https://github.com/imakewebthings/mooswipe" rel="external">other pub­lic repos­i­tory</a> is a MooTools port of some­body else’s <a href="http://www.netcu.de/jquery-touchwipe-iphone-ipad-library" rel="external">orig­i­nal work</a>.</p>
+
+<p><a href="http://gitimmersion.com/" rel="external">Git Immer­sion</a> is a great resource for any­one look­ing to get started using Git seri­ously.  Any­one who has ever taken the dive will tell you: there’s no going back. Once you’re com­fort­able with mov­ing between branches, com­mit­ting, and push­ing, <a href="http://pages.github.com" rel="external">GitHub Pages</a> are cake and a nat­ural place for project pages to live.</p>
+
+<h2>Doc­u­men­ta­tion = Important</h2>
+
+<p>Con­sid­er­ing I was 8800 miles away, I didn’t actu­ally <em>see</em> it, but Kyle Neath’s <a href="http://warpspire.com/talks/documentation/" rel="external">Doc­u­men­ta­tion is freak­ing awe­some</a> deck really kicked me into giv­ing a much bet­ter project doc­u­men­ta­tion expe­ri­ence than I might have oth­er­wise.  I prob­a­bly spent as much time tweak­ing the word­ing and appear­ance of the docs as I did writ­ing the plu­gin.  Not only does it reduce fric­tion for the devel­oper try­ing to use Way­points, it reduces fric­tion for me in try­ing to answer ques­tions and sup­port it.</p>
+
+<h2>The Future</h2>
+
+<p>With the most recent release, I’ve fin­ished adding core func­tion­al­ity.  Writ­ing unit tests, fix­ing bugs as they come in, and expand­ing the plat­forms the plu­gin cov­ers will be the main focus in the near future. Way­points does what it does well enough and I’d pre­fer to keep it light.  I’ll be inter­ested to see if any­one uses it as a brick to build some­thing neat.  If you use Way­points and would like to share with me how you’re using it, <a href="http://imakewebthings.com">give me a shout</a>.</p>

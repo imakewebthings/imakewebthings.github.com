@@ -1,0 +1,139 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+html {
+	overflow-y:scroll;
+}
+
+body {
+	font-family: 'PT Serif', serif;
+	font-size:16px;
+	line-height:1.5;
+	color:$bodyColor;
+}
+
+.container {
+	margin:0 auto;
+	width:300px;
+	padding:0 10px;
+	@include transition(width, 300ms, linear);
+
+	> header {
+		padding:12px 0;
+
+		> h1 {
+			font-size:32px;
+			line-height:48px;
+			text-transform:uppercase;
+			color:#111;
+			padding:0;
+		}
+	}
+
+	> article {
+		padding-bottom:12px;
+	}
+}
+
+nav {
+	font-size:12px;
+	line-height:12px;
+
+	ul {
+		list-style:none;
+		margin:0;
+		padding:0;
+	}
+
+	li {
+		display:inline-block;
+		margin-right:20px;
+	}
+
+	a {
+		text-decoration:none;
+		color:#888;
+
+		&:hover, &:focus {
+			color:$tango;
+		}
+	}
+
+	.selected > a {
+		color:$tango;
+		text-decoration:none;
+	}
+}
+
+p, dl, pre, blockquote {
+	margin:18px 0;
+}
+
+ul, ol {
+	padding-left:20px;
+	margin:12px 0;
+}
+
+ul {
+	list-style-type:square;
+}
+
+li {
+	padding:6px 0;
+}
+
+h1, h2 {
+	padding-top:18px;
+	font-family:'PT Sans Narrow', sans-serif;
+}
+
+h1 {
+	font-size:60px;
+	line-height:60px;
+	color:$tango;
+}
+
+h2 {
+	color:$greenComp;
+	font-size:24px;
+	line-height:1;
+	margin-bottom:18px;
+}
+
+a {
+	color:$tango;
+	text-decoration:none;
+
+	&:hover, &:focus {
+		text-decoration:underline;
+		color:$blueComp;
+	}
+}
+
+strong {
+	color:#333;
+}
+
+code {
+	background:#eee;
+	border:1px solid #ccc;
+	padding:0 2px;
+	white-space:nowrap;
+}
+
+pre {
+  padding:12px;
+  font-size:12px;
+  font-family:Consolas, "Lucida Console", Monaco;
+
+	code {
+		white-space: pre;
+	  white-space: pre-wrap;
+	  word-wrap: break-word;
+		background:transparent;
+		border:0;
+		padding:0;
+	}
+}

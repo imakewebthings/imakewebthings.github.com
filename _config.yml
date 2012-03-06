@@ -1,5 +1,8 @@
 auto: true
 permalink: /blog/:title
 pygments: true
+markdown: rdiscount
+rdiscount:
+  extensions: [smart]
 exclude:
   - README.md

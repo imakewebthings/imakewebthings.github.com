@@ -33,7 +33,7 @@ body {
 	}
 
 	> article {
-		padding-bottom:12px;
+		padding-bottom:24px;
 	}
 }
 
@@ -68,12 +68,12 @@ nav {
 }
 
 p, dl, pre, blockquote {
-	margin:18px 0;
+	margin:24px 0;
 }
 
 ul, ol {
 	padding-left:20px;
-	margin:12px 0;
+	margin:18px 0;
 }
 
 ul {
@@ -85,7 +85,7 @@ li {
 }
 
 h1, h2 {
-	padding-top:18px;
+	padding-top:24px;
 	font-family:'PT Sans Narrow', sans-serif;
 }
 
@@ -99,7 +99,7 @@ h2 {
 	color:$greenComp;
 	font-size:24px;
 	line-height:1;
-	margin-bottom:18px;
+	margin-bottom:24px;
 }
 
 a {

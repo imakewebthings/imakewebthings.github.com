@@ -36,7 +36,7 @@
     padding: 0;
   }
   .container > article {
-    padding-bottom: 12px;
+    padding-bottom: 24px;
   }
 
   nav {
@@ -65,12 +65,12 @@
   }
 
   p, dl, pre, blockquote {
-    margin: 18px 0;
+    margin: 24px 0;
   }
 
   ul, ol {
     padding-left: 20px;
-    margin: 12px 0;
+    margin: 18px 0;
   }
 
   ul {
@@ -82,7 +82,7 @@
   }
 
   h1, h2 {
-    padding-top: 18px;
+    padding-top: 24px;
     font-family: 'PT Sans Narrow', sans-serif;
   }
 
@@ -96,7 +96,7 @@
     color: #80cb37;
     font-size: 24px;
     line-height: 1;
-    margin-bottom: 18px;
+    margin-bottom: 24px;
   }
 
   a {
@@ -226,9 +226,11 @@
   .post-list p {
     margin: 0;
   }
-  .post-list .date {
+
+  .date {
     font-size: 12px;
     line-height: 2;
+    margin: 0;
     color: #888;
   }
 

@@ -137,3 +137,16 @@ pre {
 		padding:0;
 	}
 }
+
+blockquote {
+	position:relative;
+	padding-left:15px;
+	border-left:10px solid $blueComp;
+	font-size:14px;
+	line-height:1.7143;
+}
+
+p > img:first-child {
+	display:block;
+	max-width:100%;
+};

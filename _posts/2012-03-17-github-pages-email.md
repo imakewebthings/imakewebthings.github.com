@@ -37,7 +37,7 @@ The GitHub instructions don't tell the whole story, nor should they, about all t
 Great question, voice in my head.  If you've managed DNS records before this is all 101 material. For folks like myself who until recently relied on other team members to deal with these matters, it's foreign. To summarize:
 
 - **A Record**: The basic core of DNS.  It maps a nice, pretty URL to a messy IP address behind the scenes.
-- **CNAME**: A "Canonical Name" record. It acts as an alias, redirecting requests to another record.  A common one is `www.tld.com` pointing to `tld.com`.  If a user navigates to `www.tld.com` the DNS server will say, "Hey, go here instead."
+- **CNAME**: A "Canonical Name" record. It acts as an alias, redirecting lookups to another record.  A common one is `www.tld.com` pointing to `tld.com`.  If a user navigates to `www.tld.com` the DNS server will say, "Hey, go here instead."
 - **MX Record**: This record describes where to route SMTP mail traffic. It should point to wherever your email is hosted.
 
 If you haven't already guessed, my MX record for the `imakewebthings.com` domain was pointed to `imakewebthings.com` which was now resolving to the GitHub IP address instead of my old shared server that hosts the email.  Other hosts may point to a separate A record specifically for this purpose, but it's worth checking. If you're wondering why you don't see the MX record listed, it's because in cPanel **MX records are not listed in the Advanced DNS Zone Editor.**  They're in a separate page under the Mail section.

@@ -7,7 +7,7 @@ tldr: Love the command line? Hate the command line? Either way, you should consi
 On a [recent episode](http://shoptalkshow.com/episodes/011-with-jina-bolton/) of [ShopTalk Show](http://shoptalkshow.com) Chris Coyier voiced his personal preference for using a suite of UI applications over running a bunch of shell commands in the terminal.
 
 <script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
-<audio src="http://s3.amazonaws.com/imakewebthings-blog/ShopTalk_011_Clip.mp3" controls preload>&nbsp;</audio>
+<audio src="http://s3.amazonaws.com/imakewebthings-blog/ShopTalk_011_Clip.mp3" controls>&nbsp;</audio>
 
 > I should say that I'm not afraid of it, I just prefer most things &mdash; like I use Sass all day long, right? I don't want to go into the terminal, `cd` to where my thing is, and go `sass --watch` and then `--` and then the stupid formats and all that stuff. And then every time I restart my computer I have to open it up and do it again. I would rather use something like [LiveReload](http://livereload.com) or [CodeKit](http://incident57.com/codekit/) that just automatically starts when I turn on my computer, it's automatically watching those directories for changes. I prefer UIs.
 
@@ -30,10 +30,10 @@ tab :name => 'Sass' do
 end
 
 tab :name => 'Git' do
-  run 'subl .'
   run 'git st'
 end
 
+run 'subl .'
 run 'open http://0.0.0.0:4000'
 run 'exit'
 {% endhighlight %}
@@ -53,7 +53,7 @@ Now you can create projects with `consular create projectname`. Write the "Termf
 before { run 'cd ~/Sites/imakewebthings.github.com' }
 {% endhighlight %}
 
-Anything in a `before` block is ran immediately and at the beginning of every new tab creation. Since I may be anywhere in the file system when I run the `consular start` command, I want to make sure I go to the project directory. Many terminal apps also have a default setting to go to the home directory when creating new tabs rather than keep the location from the previous tab. There are settings to change this, but it's good to know this annoyance is out of the way regardless.
+Anything in a `before` block is executed immediately and at the beginning of every new tab creation. Since I may be anywhere in the file system when I run the `consular start` command, I want to make sure I go to the project directory. Many terminal apps also have a default setting to go to the home directory when creating new tabs rather than keep the location from the previous tab. There are settings to change this, but it's good to know this annoyance is out of the way regardless.
 
 {% highlight ruby %}
 tab :name => 'Jekyll' do
@@ -74,14 +74,14 @@ Here is the `sass` watcher Chris brought up. For tabs that only have one command
 
 {% highlight ruby %}
 tab :name => 'Git' do
-  run 'subl .'
   run 'git st'
 end
 {% endhighlight %}
 
-Opens the project directory in [Sublime Text 2](http://www.sublimetext.com/2). Runs `git status` just to see where things are. Since this tab doesn't have a running process like the others, it's also where I do any terminal work going forward. Because our original tab that everything started from is about to go away.
+Runs `git status` just to see where things are. Since this tab doesn't have a running process like the others, it's also where I do any terminal work going forward. Because our original tab that everything started from is about to go away.
 
 {% highlight ruby %}
+run 'subl .' #Opens project directory in Sublime Text 2
 run 'open http://0.0.0.0:4000/blog'
 run 'exit'
 {% endhighlight %}
@@ -90,13 +90,13 @@ It is in no way a requirement of a Consular script, but if I'm using it to creat
 
 ## Who Shouldn't Use This
 
-**If you're a purely front-end developer**, you work on mostly static web projects, and **never** need to touch the shell then by all means, grab CodeKit and [GitHub for Mac](http://mac.github.com/) and be happy. This is probably your ideal setup. If you can avoid using the command line altogether, that's awesome.
+**If you're a purely front-end developer**, you work on mostly static web projects, and *never* need to touch the shell then by all means, grab CodeKit and [GitHub for Mac](http://mac.github.com/) and be happy. This is probably your ideal setup. If you can avoid using the command line altogether, that's awesome. But keep reading. You may have reasons for using a terminal automator beyond your development projects.
 
-**If you do everything in vim**, remotely pair-program, have never sullied the hair on your neck with the edge of a razor, or otherwise spend **a lot** of time on the command line then you want something more advanced. But if you fit this description, you already know about [tmux](http://tmux.sourceforge.net/) and [tmuxinator](https://github.com/aziz/tmuxinator) and stopped reading a long time ago.
+**If you do everything in vim**, remote pair-program, have never sullied the hair on your neck with the edge of a razor, or otherwise spend **a lot** of time on the command line then you want something more advanced. But if you fit this description, you already know about [tmux](http://tmux.sourceforge.net/) and [tmuxinator](https://github.com/aziz/tmuxinator) and stopped reading a long time ago.
 
 ## Not Black and White
 
-*Either you use the UI tools or you rock the command line.* I don't want this false dichotomy to creep into your head. These tools don't have to be used exclusive of each other. You can easily use something like Consular to launch a bunch of apps and quit the terminal altogether. Let's take a look at the script for Waypoints:
+Here's a false dichotomy for you. *Either you use the UI tools or you rock the command line.* Keep this from creeping into your head. These tools don't have to be used exclusive of each other. You can easily use something like Consular to launch a bunch of apps and quit the terminal altogether. Let's take a look at my script for Waypoints:
 
 {% highlight ruby %}
 run "cd ~/Sites/waypoints/jquery"
@@ -106,18 +106,18 @@ run "open http://github.com/imakewebthings/jquery-waypoints/issues"
 run "git st"
 {% endhighlight %}
 
-Aside from the `git st` I'm just launching applications, two Chrome tabs and Sublime. If I didn't use git from the command line this could just as easily end with&hellip;
+Aside from the `git st` I'm just launching applications. Two Chrome tabs and [Sublime Text 2](http://www.sublimetext.com/2). If I didn't use git from the command line this could just as easily end with&hellip;
 
 {% highlight ruby %}
 run "github" # You've installed the GitHub for Mac command line tool, right?
 run "exit"
 {% endhighlight %}
 
-I find this terminal-less terminal appealing because it speaks to what we're **really** doing with these scripts.
+I find this terminal-less ending appealing because it hints at what we're **really** doing with these scripts.
 
 ## Come for the Terminal Automation, Stay for the Context Switches
 
-If there's anything we can agree on as an industry it's this: [Context switches are bad](http://www.joelonsoftware.com/articles/fog0000000022.html).[^1] But even in the most optimal environment free of interruptions there will come a time when you need to switch contexts on purpose. Let's look at a contrived but plausible day in the life of yours truly (computer activities only):
+If there's anything we can agree on as an industry it's this: [Context switches are bad](http://www.joelonsoftware.com/articles/fog0000000022.html).[^1] But even in the most optimal environment &mdash; free from interrupting phone calls, hour long "design meetings", and shoulder-perched micromanagers &mdash; there will come a time when you need to switch contexts on purpose. Let's look at a contrived but plausible day in the life of yours truly (computer activities only):
 
 - Wake up. Check email.[^2]
 - Work on *Client Project*.
@@ -125,7 +125,7 @@ If there's anything we can agree on as an industry it's this: [Context switches 
 - Work on *Client Project*.
 - After dinner, fix a bug in Waypoints.
 - Make an improvement to a transition theme in deck.js.
-- Work on a draft of this post for the blog.
+- Work on a draft of this blog post.
 - Check email.
 - Screw around. Facebook, games, read blogs, fantasy baseball, etc.
 
@@ -135,9 +135,9 @@ You know what I do when I want to work on *Client Project*, Waypoints, this blog
 2. Launch iTerm2.
 3. `consular start contextname`
 
-That's right. `consular start email`. `consular start dickaround`. So now my day turns into a series of quitting all my application and launching Consular scripts. I don't need to ask myself what programs and files to open. I just need to ask myself what I should be working on **right now**.
+That's right. `consular start email`. `consular start dickaround`. Now my day turns into a series of *Quit, Run Script, Do Work*, *Quit, Run Script, Do Work*. I don't need to ask myself what programs and files to open. I just need to ask myself what I should be working on **right now**.
 
-This probably won't help your brain get into flow with each switch &mdash; only doing the work will get you there &mdash; but having these simple repeatable steps and a script to setup each context certainly makes the transitions smoother and quicker. I dare you to give it a try &mdash; start small, one or two projects at first &mdash; then try to go back. I can't.
+This probably won't help your brain get into flow with each switch &mdash; only doing the work will get you there &mdash; but having simple repeatable steps certainly makes the transition smoother and quicker. I dare you to give it a try &mdash; start small, one or two projects at first &mdash; then try to go back. I can't.
 
 
 [^1]: While they didn't coin the phrase, perhaps the most important work on the subject of context switches and software development environments in general is [Peopleware](http://www.amazon.com/Peopleware-Productive-Projects-Teams-Second/dp/0932633439) by Tom DeMarco and Timothy Lister. I was lucky enough to have a teacher who made this required reading for intro Software Engineering courses. Do yourself a favor. Get off the Internet and read it.

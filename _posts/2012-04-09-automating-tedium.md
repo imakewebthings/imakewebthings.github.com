@@ -7,7 +7,7 @@ tldr: Love the command line? Hate the command line? Either way, you should consi
 On a [recent episode](http://shoptalkshow.com/episodes/011-with-jina-bolton/) of [ShopTalk Show](http://shoptalkshow.com) Chris Coyier voiced his personal preference for using a suite of UI applications over running a bunch of shell commands in the terminal.
 
 <script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
-<audio src="http://s3.amazonaws.com/imakewebthings-blog/ShopTalk_011_Clip.mp3" controls>&nbsp;</audio>
+<audio src="http://s3.amazonaws.com/imakewebthings-blog/ShopTalk_011_Clip.mp3" controls="controls">&nbsp;</audio>
 
 > I should say that I'm not afraid of it, I just prefer most things &mdash; like I use Sass all day long, right? I don't want to go into the terminal, `cd` to where my thing is, and go `sass --watch` and then `--` and then the stupid formats and all that stuff. And then every time I restart my computer I have to open it up and do it again. I would rather use something like [LiveReload](http://livereload.com) or [CodeKit](http://incident57.com/codekit/) that just automatically starts when I turn on my computer, it's automatically watching those directories for changes. I prefer UIs.
 

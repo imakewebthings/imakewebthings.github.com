@@ -86,7 +86,7 @@ run 'open http://0.0.0.0:4000/blog'
 run 'exit'
 {% endhighlight %}
 
-It is in no way a requirement of a Consular script, but if I'm using it to create tabs I run `exit` at the end. This closes the original tab. That original tab may be unnamed or named from a previously run script, and I no longer need or want it. Before exiting I launch anything that needs launching but doesn't concern itself with the terminal. In this case, I open the local Jekyll instance in my default browser.
+It is in no way a requirement of a Consular script, but if I'm using it to create tabs I run `exit` at the end. This closes the original tab. That original tab may be unnamed or named from a previously run script, and I no longer need or want it. Before exiting I launch anything that needs launching but doesn't concern itself with the terminal. In this case, I open the local Jekyll instance in my default browser and open the project directory in [Sublime Text 2](http://www.sublimetext.com/2).
 
 ## Who Shouldn't Use This
 
@@ -96,7 +96,7 @@ It is in no way a requirement of a Consular script, but if I'm using it to creat
 
 ## Not Black and White
 
-Here's a false dichotomy for you. *Either you use the UI tools or you rock the command line.* Keep this from creeping into your head. These tools don't have to be used exclusive of each other. You can easily use something like Consular to launch a bunch of apps and quit the terminal altogether. Let's take a look at my script for Waypoints:
+Here's a false dichotomy for you. *Either you use the UI tools or you rock the command line.* Keep this from creeping into your head. These tools don't have to be used exclusive of each other. You can easily use something like Consular to launch a bunch of apps and quit the terminal altogether. Let's take a look at my script for [Waypoints](http://imakewebthings.com/jquery-waypoints):
 
 {% highlight ruby %}
 run "cd ~/Sites/waypoints/jquery"
@@ -106,7 +106,7 @@ run "open http://github.com/imakewebthings/jquery-waypoints/issues"
 run "git st"
 {% endhighlight %}
 
-Aside from the `git st` I'm just launching applications. Two Chrome tabs and [Sublime Text 2](http://www.sublimetext.com/2). If I didn't use git from the command line this could just as easily end with&hellip;
+Aside from the `git st` I'm just launching applications. Two Chrome tabs and Sublime. If I didn't use git from the command line this could just as easily end with&hellip;
 
 {% highlight ruby %}
 run "github" # You've installed the GitHub for Mac command line tool, right?
@@ -135,13 +135,13 @@ You know what I do when I want to work on *Client Project*, Waypoints, this blog
 2. Launch iTerm2.
 3. `consular start contextname`
 
-That's right. `consular start email`. `consular start dickaround`. Now my day turns into a series of *Quit, Run Script, Do Work*, *Quit, Run Script, Do Work*. I don't need to ask myself what programs and files to open. I just need to ask myself what I should be working on **right now**.
+That's right. `consular start email`. `consular start dickaround`. Now my day turns into a series of *Quit, Run Script, Do Work*, *Quit, Run Script, Do Work*, ad infinitum. That may sound boring or robotic, but I see it as relief for the brain. I don't need to ask myself what programs and files to open. I just need to ask myself what I should be working on **right now**. Then focus on doing that thing.
 
 This probably won't help your brain get into flow with each switch &mdash; only doing the work will get you there &mdash; but having simple repeatable steps certainly makes the transition smoother and quicker. I dare you to give it a try &mdash; start small, one or two projects at first &mdash; then try to go back. I can't.
 
 
-[^1]: While they didn't coin the phrase, perhaps the most important work on the subject of context switches and software development environments in general is [Peopleware](http://www.amazon.com/Peopleware-Productive-Projects-Teams-Second/dp/0932633439) by Tom DeMarco and Timothy Lister. I was lucky enough to have a teacher who made this required reading for intro Software Engineering courses. Do yourself a favor. Get off the Internet and read it.
+[^1]: While they didn't coin the phrase, perhaps the most important work on the subject of context switches and software development environments in general is [Peopleware](http://www.amazon.com/Peopleware-Productive-Projects-Teams-Second/dp/0932633439) by Tom DeMarco and Timothy Lister. I was lucky enough to have a teacher who made this required reading for intro Software Engineering courses. Go read it, now.
 
 [^2]: I don't want to get sidetracked on how to do email, but these usually get answered, deleted, or tagged and filed away in 15 minutes or less.
 
-[^3]: I leave the programs that live in the taskbar or dock alone, such as Adium, Twitter, and Skype. I have one windowed program that I want to keep open across all contexts, and I keep it in its own Space/Desktop for that reason: iTunes.
+[^3]: I leave the programs that live in the taskbar or dock alone, such as Adium, Twitter, and Skype. I have one windowed program that I want to keep open across all contexts, and I keep it in a separate Space/Desktop for that reason: iTunes.

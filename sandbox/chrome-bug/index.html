@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Reduced Test Case</title>
+	
+	<style type="text/css">
+		body {
+			font-size:1.74em;
+		}
+
+		.slide {
+		  position: absolute;
+		  -webkit-transition: -webkit-transform 1s ease-in-out;
+		}
+
+		.deck-previous {
+		  -webkit-transform: translate3d(-200%, 0, 0);
+		}
+
+		.deck-next {
+		  -webkit-transform: translate3d(200%, 0, 0);
+		}
+	</style>
+</head>
+
+<body class="deck-container">
+
+<!-- Begin slides -->
+<section class="slide" id="title-slide">
+	<h1>Getting Started with deck.js</h1>
+</section>
+
+<section class="slide" id="markup">
+	<h2>Markup</h2>
+	<p>Slides.</p>
+	<pre><code>&lt;section class=&quot;slide&quot;&gt;
+   &lt;h2&gt;&lt;/h2&gt;
+   &lt;ol&gt;
+      &lt;li&gt;
+         &lt;h3&gt;&lt;/h3&gt;
+         &lt;p&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+         &lt;h3&gt;&lt;/h3&gt;
+         &lt;p&gt;One for styles and one for transitions.&lt;/p&gt;
+      &lt;/li&gt;
+   &lt;/ol&gt;
+&lt;/section&gt;</code></pre>
+</section>
+
+<section class="slide" id="themes">
+	<h2>This Slide Works Fine, Little Content</h2>
+</section>
+
+<script type="text/javascript">
+	var slides, current = 0;
+	
+	function updateStates() {
+		for (var i = 0, len = slides.length; i < len; i++) {
+			slides[i].className = 'slide';
+			if (i < current) {
+				slides[i].classList.add('deck-previous');
+			}
+			else if (i === current) {
+				slides[i].classList.add('deck-current');
+			}
+			else {
+				slides[i].classList.add('deck-next');
+			}
+		}
+	}
+
+	window.onload = function() {
+		slides = document.getElementsByClassName('slide');
+
+		document.addEventListener('keydown', function(event) {
+			if (event.which === 39 && current < slides.length - 1) {
+				current++;
+			}
+			else if (event.which === 37 && current > 0) {
+				current--;
+			}
+
+			if (event.which === 39 || event.which === 37) {
+				event.preventDefault();
+			}
+			updateStates();
+		});
+		
+		updateStates();
+	}
+</script>
+
+</body>
+</html>

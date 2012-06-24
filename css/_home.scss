@@ -2,6 +2,86 @@
 	width:300px;
 }
 
+.hire {
+	width:300px;
+	border:1px solid #ddd;
+	margin:14px 0 24px 0;
+	padding-bottom:0;
+
+	> h2 {
+		padding:8px 15px 5px 15px;
+		color:#111;
+		background:#eee;
+		margin:0;
+	}
+
+	> ul {
+		padding:0 0 15px 0;
+		margin:0 auto 15px auto;
+		width:270px;
+		border-bottom:1px solid #ddd;
+
+		> li {
+			margin-left:30px;
+
+			&:first-child {
+				color:$blueComp;
+				font-weight:bold;
+				list-style:none;
+				font-size:48px;
+				margin-left:0;
+				padding-bottom:0;
+
+				> span {
+					font-size:24px;
+				}
+			}
+		}
+	}
+
+	> table {
+		width:100%;
+		font-size:14px;
+
+		th {
+			position:absolute;
+			left:-9999px;
+		}
+
+		td {
+			padding:5px 15px;
+		}
+
+		tr:nth-child(even) td {
+			background:#eee;
+		}
+	}
+}
+
+.available, .unavailable {
+	color:#888;
+
+	&:before {
+		font-family: FontAwesome;
+	  font-weight: normal;
+	  font-style: normal;
+	  display: inline-block;
+	  text-decoration: inherit;
+	}
+}
+
+.available:before {
+	content:"\f00c";
+	width:20px;
+	color:$greenComp;
+}
+
+.unavailable:before {
+	content:"\f00d";
+	width:20px;
+	color:$tango;
+}
+
 .projects {
 	list-style:none;
 	padding-left:0;
@@ -26,15 +106,27 @@
 	background:$blueComp;
 	font-family:"Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 	font-weight:bold;
+
+	&:hover, &:focus {
+		background:$blueComp - #222;
+	}
 }
 
 .waypoints {
 	background:$greenComp;
 	font-family:Cambria, Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+
+	&:hover, &:focus {
+		background:$greenComp - #222;
+	}
 }
 
 .and-more {
 	background:$tango;
+
+	&:hover, &:focus {
+		background:$tango - #222;
+	}
 }
 
 .contact {
@@ -45,7 +137,8 @@
 
 	> li {
 		float:left;
-		margin-left:14px;
+		margin-left:45px;
+		padding:0;
 
 		&:first-child {
 			margin-left:0;
@@ -53,8 +146,6 @@
 
 		> a {
 			display:block;
-			width:64px;
-			padding-top:54px;
 			text-align:center;
 			font-size:12px;
 			color:#888;
@@ -65,23 +156,28 @@
 				color:$tango;
 				text-decoration:none;
 			}
+
+			&:before {
+				font-family:FontAwesome;
+			  font-weight:normal;
+			  font-style:normal;
+			  display:block;
+			  text-decoration:inherit;
+			  font-size:24px;
+			  line-height:1.25;
+			}
 		}
 	}
 }
 
-.skype {
-	background-image:url(/images/speach_bubble.png);
+.skype:before {
+	content:"\f075";
 }
 
-.email {
-	background-image:url(/images/mail.png);
+.email:before {
+	content:"\f0e0";
 }
 
-.twitter {
-	background-image:url(/images/twitter.png);
+.twitter:before {
+	content:"\f099";
 }
-
-.facebook {
-	background-image:url(/images/facebook.png);
-}
-

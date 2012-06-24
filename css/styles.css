@@ -1,3 +1,34 @@
+/*  Font Awesome
+    the iconic font designed for use with Twitter Bootstrap
+    -------------------------------------------------------
+    The full suite of pictographic icons, examples, and documentation
+    can be found at: http://fortawesome.github.com/Font-Awesome/
+
+    License
+    -------------------------------------------------------
+    The Font Awesome webfont, CSS, and LESS files are licensed under CC BY 3.0:
+    http://creativecommons.org/licenses/by/3.0/ A mention of
+    'Font Awesome - http://fortawesome.github.com/Font-Awesome' in human-readable
+    source code is considered acceptable attribution (most common on the web).
+    If human readable source code is not available to the end user, a mention in
+    an 'About' or 'Credits' screen is considered acceptable (most common in desktop
+    or mobile software).
+
+    Contact
+    -------------------------------------------------------
+    Email: dave@davegandy.com
+    Twitter: http://twitter.com/fortaweso_me
+    Work: http://lemonwi.se co-founder
+
+    */
+@font-face {
+  font-family: "FontAwesome";
+  src: url("../font/fontawesome-webfont.eot");
+  src: url("../font/fontawesome-webfont.eot?#iefix") format("eot"), url("../font/fontawesome-webfont.woff") format("woff"), url("../font/fontawesome-webfont.ttf") format("truetype"), url("../font/fontawesome-webfont.svg#FontAwesome") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @media screen {
   * {
     margin: 0;
@@ -35,7 +66,8 @@
     color: #111;
     padding: 0;
   }
-  .container > article {
+
+  article {
     padding-bottom: 24px;
   }
 
@@ -150,6 +182,76 @@
     width: 300px;
   }
 
+  .hire {
+    width: 300px;
+    border: 1px solid #ddd;
+    margin: 14px 0 24px 0;
+    padding-bottom: 0;
+  }
+  .hire > h2 {
+    padding: 8px 15px 5px 15px;
+    color: #111;
+    background: #eee;
+    margin: 0;
+  }
+  .hire > ul {
+    padding: 0 0 15px 0;
+    margin: 0 auto 15px auto;
+    width: 270px;
+    border-bottom: 1px solid #ddd;
+  }
+  .hire > ul > li {
+    margin-left: 30px;
+  }
+  .hire > ul > li:first-child {
+    color: #348ec0;
+    font-weight: bold;
+    list-style: none;
+    font-size: 48px;
+    margin-left: 0;
+    padding-bottom: 0;
+  }
+  .hire > ul > li:first-child > span {
+    font-size: 24px;
+  }
+  .hire > table {
+    width: 100%;
+    font-size: 14px;
+  }
+  .hire > table th {
+    position: absolute;
+    left: -9999px;
+  }
+  .hire > table td {
+    padding: 5px 15px;
+  }
+  .hire > table tr:nth-child(even) td {
+    background: #eee;
+  }
+
+  .available, .unavailable {
+    color: #888;
+  }
+  .available:before, .unavailable:before {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
+  }
+
+  .available:before {
+    content: "\f00c";
+    width: 20px;
+    color: #80cb37;
+  }
+
+  .unavailable:before {
+    content: "\f00d";
+    width: 20px;
+    color: #e1523d;
+  }
+
   .projects {
     list-style: none;
     padding-left: 0;
@@ -173,14 +275,23 @@
     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     font-weight: bold;
   }
+  .deck:hover, .deck:focus {
+    background: #126c9e;
+  }
 
   .waypoints {
     background: #80cb37;
     font-family: Cambria, Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
   }
+  .waypoints:hover, .waypoints:focus {
+    background: #5ea915;
+  }
 
   .and-more {
     background: #e1523d;
+  }
+  .and-more:hover, .and-more:focus {
+    background: #bf301b;
   }
 
   .contact {
@@ -191,15 +302,14 @@
   }
   .contact > li {
     float: left;
-    margin-left: 14px;
+    margin-left: 45px;
+    padding: 0;
   }
   .contact > li:first-child {
     margin-left: 0;
   }
   .contact > li > a {
     display: block;
-    width: 64px;
-    padding-top: 54px;
     text-align: center;
     font-size: 12px;
     color: #888;
@@ -210,21 +320,26 @@
     color: #e1523d;
     text-decoration: none;
   }
-
-  .skype {
-    background-image: url(/images/speach_bubble.png);
+  .contact > li > a:before {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    display: block;
+    text-decoration: inherit;
+    font-size: 24px;
+    line-height: 1.25;
   }
 
-  .email {
-    background-image: url(/images/mail.png);
+  .skype:before {
+    content: "\f075";
   }
 
-  .twitter {
-    background-image: url(/images/twitter.png);
+  .email:before {
+    content: "\f0e0";
   }
 
-  .facebook {
-    background-image: url(/images/facebook.png);
+  .twitter:before {
+    content: "\f099";
   }
 
   .post-list {
@@ -564,8 +679,16 @@
     width: 460px;
   }
 }
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 660px) {
   .container {
-    width: 620px;
+    width: 640px;
+  }
+
+  .home {
+    float: left;
+  }
+
+  .hire {
+    float: right;
   }
 }

@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Page Reload Test</title>
+  <style type="text/css">
+    html, body {
+      margin:0;
+      padding:0;
+    }
+
+    div {
+      height:3000px;
+      background:blue;
+    }
+
+    #first {
+      background:yellow;
+    }​
+  </style>
+</head>
+
+<body>
+  <div id="first">
+    <ol>
+      <li>Wait 1 second for the blue div to be appended.</li>
+      <li>Scroll to the bottom of the page.</li>
+      <li>Reload the page.</li>
+    </ol>
+    <p>On reload most browsers will log 'Load', 'Scrolled', 'Appended' and will end up scrolled to the bottom of the yellow div. They attempt to restore scroll state once and stop before the asynchronous function appends the new blue div. Gecko will log 'Load', 'Scrolled', 'Appended', 'Scrolled'. It continues to try to restore the scroll state, making the same intermediate scroll update but also waiting for asynchronous functions to finish before it tries again.</p>
+    <p>I don't know who is doing it right. Or maybe the spec leaves this up to the user agent.</p>
+  </div>
+
+  <script type="text/javascript">
+    window.setTimeout(function() {
+      var second = document.createElement('div');
+      document.body.appendChild(second);
+      console.log('Appended');
+    }, 1000);
+
+    window.onload = function() {
+      console.log('Load');
+    };
+
+    window.onscroll = function() {
+      console.log('Scrolled');
+    }
+  </script>
+</body>
+</html>

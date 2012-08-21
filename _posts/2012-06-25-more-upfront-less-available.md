@@ -4,7 +4,7 @@ title: More Upfront, Less Available
 tldr: I&rsquo;ve published my rate and limited my hours to 20 per week.
 ---
 
-***Update:** Since the original posting, the numbers I specify have changed and will continue to change. Current rates and availability will always be up-to-date on my about page.*
+_**Update:** Since the original posting, the numbers I specify have changed and will continue to change. Current rates and availability will always be up-to-date on my about page._
 
 I've updated my [about page](/) to included some no-nonsense information on availability and pricing. It's a direct and transparent approach that I've been interested in adopting since hearing [Sam Soffes](http://samsoff.es) discuss it[^1] on [The Industry Radio Show](http://theindustry.cc/2012/05/01/8-adobe-html5rocks-dialoggs-invites-and-making-cheddar/). I'm excited to make this change. Here's what's new:
 

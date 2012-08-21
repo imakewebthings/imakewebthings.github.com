@@ -144,9 +144,16 @@ blockquote {
 	border-left:10px solid $blueComp;
 	font-size:14px;
 	line-height:1.7143;
+	color:#888;
 }
 
 p > img:first-child {
 	display:block;
 	max-width:100%;
-};
+}
+
+hr {
+	border:0;
+	height:1px;
+	background:#eee;
+}

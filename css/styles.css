@@ -171,11 +171,18 @@
     border-left: 10px solid #348ec0;
     font-size: 14px;
     line-height: 1.7143;
+    color: #888;
   }
 
   p > img:first-child {
     display: block;
     max-width: 100%;
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background: #eee;
   }
 
   .home {
@@ -674,11 +681,6 @@
   }
 
   /* Literal.Number.Integer.Long */
-}
-@media screen and (min-width: 480px) {
-  .container {
-    width: 460px;
-  }
 }
 @media screen and (min-width: 660px) {
   .container {

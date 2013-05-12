@@ -185,6 +185,12 @@
     background: #eee;
   }
 
+  sup {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+  }
+
   .home {
     width: 300px;
   }

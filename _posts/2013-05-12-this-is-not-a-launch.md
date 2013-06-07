@@ -4,7 +4,7 @@ title: This Is Not a Launch
 tldr: A how-to guide for creating a product with no features on purpose.
 ---
 
-![A sketch of a rocket, under it written: Ceci n'est pas une lancement](https://s3.amazonaws.com/imakewebthings-blog/launch.jpg)
+![A sketch of a rocket, under it written: Ceci n'est pas un lancement](https://s3.amazonaws.com/imakewebthings-blog/launch.jpg)
 
 Two months ago I had a conversation with a potential new client over Skype. They said, "I've been reading through your blog posts. You mention how most people can [code in the open](/blog/deck-js-post-mortem-quick-hits/) and nobody will care, but then you [allude to a mysterious new thing](/blog/more-upfront-less-available/) you're working on without giving details. What's up with that?"
 

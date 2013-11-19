@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BODY BG repaint bug</title>
+  <style type="text/css">
+    html, body {
+      height:100%;
+      padding:0;
+      margin:0;
+    }
+    body {
+      background-color:yellow;
+    }
+    body.art {
+      background:url(http://placekitten.com/400);
+    }
+    .buttons {
+      position:fixed;
+      bottom:0;
+    }
+    .transparent {
+      width:100%;
+      min-height:180px;
+      background:rgba(255,255,255, .5);
+      margin-bottom:50px;
+      float:left;
+    }
+  </style>
+</head>
+<body>
+  <div class="buttons">
+    <button id="on">On</button>
+    <button id="off">Off</button>
+  </div>
+
+  <div class="transparent">
+    <h3>Repro Steps:</h3>
+    <ol>
+      <li>Scroll down (lets say to the bottom.)</li>
+      <li>Click the on button.</li>
+      <li>Click the off button.</li>
+      <li>Notice the background does not repaint correctly.</li>
+    </ol>
+
+    <h3>Other Notes:</h3>
+    <ul>
+      <li>The bug doesn't present "above the fold", hence the scrolling down.</li>
+      <li>Not having the .transparent elemnents float also "fixes" the bug.</li>
+    </ul>
+  </div>
+  <div class="transparent"></div>
+  <div class="transparent"></div>
+  <div class="transparent"></div>
+  <div class="transparent"></div>
+  <div class="transparent"></div>
+  <div class="transparent"></div>
+  <div class="transparent"></div>
+  <div class="transparent"></div>
+  <div class="transparent"></div>
+  <div class="transparent"></div>
+  <div class="transparent"></div>
+
+  <script>
+    document.getElementById('on').addEventListener('click', function() {
+      document.body.classList.add('art');
+    });
+    document.getElementById('off').addEventListener('click', function() {
+      document.body.classList.remove('art');
+    });
+  </script>
+</body>
+</html>

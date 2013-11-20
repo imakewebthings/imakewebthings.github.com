@@ -4,7 +4,7 @@ title: Just-In-Time Versioning
 tldr: Deck.js spent two years without any semantic versioning. Nobody complained. Here's why.
 ---
 
-When [deck.js](http://imakewebthings.com/deck.js/) was published I didn't give it a version number. The first time I did this it was an accident, or at least innocent oversight, as I was making public a project without a long-term plan. This lack of versioning system has lasted to this day. In place of proper versions were two branches, `stable` and `master`. Changes were made to master. When they were vetted and felt right, they were merged into stable.
+When [deck.js](http://imakewebthings.com/deck.js/) was published I didn't give it a version number. The first time I did this it was an accident, or at least innocent oversight, as I was making public a project without a long-term plan. This unversioned system has lasted to this day. In place of proper versions were two branches, `stable` and `master`. Changes were made to master. When they were vetted and felt right, they were merged into stable.
 
 ## It Worked for Two Years
 

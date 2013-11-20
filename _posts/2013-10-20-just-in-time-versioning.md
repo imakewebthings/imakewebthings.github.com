@@ -4,11 +4,11 @@ title: Just-In-Time Versioning
 tldr: Deck.js spent two years without any semantic versioning. Nobody complained. Here's why.
 ---
 
-When [deck.js](http://imakewebthings/deck.js/) was published I didn't give it a version number. The first time I did this it was an accident, or at least innocent oversight, as I was making public a project without a long-term plan. This lack of versioning system has lasted to this day. In place of proper versions were two branches, `stable` and `master`. Changes were made to master. When they were vetted and felt right, they were merged into stable.
+When [deck.js](http://imakewebthings.com/deck.js/) was published I didn't give it a version number. The first time I did this it was an accident, or at least innocent oversight, as I was making public a project without a long-term plan. This lack of versioning system has lasted to this day. In place of proper versions were two branches, `stable` and `master`. Changes were made to master. When they were vetted and felt right, they were merged into stable.
 
 ## It Worked for Two Years
 
-Never in the history of the project have I received a complaint about the lack of semantic versioning. I'm inclined to chalk it up to people having the problem and not complaining to me, but considering that my inbox is full of complaints about every other conceivable matter I'm left to conclude that it *just isn't that important to the average user*. That is... for a project like this.
+Never in the history of the project have I received a complaint about the lack of semantic versioning. I'm inclined to chalk it up to people having the problem and not complaining, but considering that my inbox is full of complaints about every other conceivable matter I'm left to conclude that it *just isn't that important to the average user*. That is... for a project like this.
 
 When an average user consumes deck.js they download it, edit slides, tweak a theme or two, give their presentation, and then they are **done**. There's no updating modules, no merging changes, no outdated plugins. Versioning never comes into play for these users. And for the power users or extension authors that rely on the core project, the fact of the matter is the API has not significantly changed in two years. In the world of semver, we'd probably be on the same minor release as day one.
 

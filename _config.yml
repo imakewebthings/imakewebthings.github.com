@@ -1,9 +1,6 @@
-auto: true
 exclude:
   - README.md
 markdown: kramdown
 permalink: /blog/:title
 pygments: true
-#rdiscount:
-#  extensions: [smart]
 safe: true

@@ -40,7 +40,7 @@ Odds are if you've been to a conference you've been to *that* conference, sat in
 
 Let's look at my complaints once again.
 
-- **Question Quality**: Questions are now seen beforehand and voted on by the crowd. Good questions and questions that many people have float to the top.
+- **Question Quality**: Questions are now seen beforehand and voted on by the crowd. High quality popular questions float to the top.
 - **Question Selection**: The idea of the presenter selecting a questioner is almost completely discarded. Selection is moved to the collective audience. The presenter does have final say on what's answered, as they could just skip over a highly upvoted question, but the crowd will be aware of what questions were skipped, which is interesting information as well.
 - **Time Management**: Typing the question gives questioners the ability to pause, think, and self-edit questions. Presenters can also use their expertise to summarize and rephrase the question when reading it aloud.
 - **Identity**: Questions are presented next to the Twitter thumbnail of the questioner, which links to their Twitter profile. Other audience members are no longer forced to hear the short bio of every questioner. Presenters are given an identity that they can contact after the presentation for followup.

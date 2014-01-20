@@ -23,7 +23,7 @@ Time is up. More applause. On to the next session.
 Odds are if you've been to a conference you've been to *that* conference, sat in *that* session. This is the status quo for conference Q&A sessions and it is broken. Among my complaints:
 
 - **Question Quality**: Nobody has any idea how good a question will be until it leaves the questioner's mouth. By the time this happens the crowd and presenter have already promised to give the question time and attention, regardless of quality. This strikes me as backwards.
-- **Questioner Selection**: In our prototypical example above, the best-case scenario when the crowd raises hands is *random questioner selection*. Worse yet, the speaker may select based on people they already know or by a bias, conscious or unconscious. If you use a first-come first-serve line, you're chosing questions by who has the fastest feet and less fear of speaking in front of a crowd.
+- **Questioner Selection**: In our prototypical example above, the best-case scenario when the crowd raises hands is *random questioner selection*. Worse yet, the speaker may select based on people they already know or by a bias, conscious or unconscious. If you use a first-come first-serve line, you're chosing questions by who has the fastest feet and least fear of speaking in front of a crowd.
 - **Time Management**: There are probably no checks on how long it takes to ask a question. A long question may distill well into a five-second question, but what comes out at a microphone is typically a first draft. Are we surprised that first drafts are awkward, unclear, overly long, and stray off topic?
 - **Identity**: Who the questioner is and what information you would like to know about them depends on which person you are in the room. If you are a fellow attendee, you probably don't need to know much. The question is the important part. For the presenter, the question is obviously still important but you may also be interested in connecting with the questioner later, perhaps to answer the question in more detail and provide additional resources. "Hi, my name is Questioner, I work at Company, and my question is," does a terrible job of providing a useful identity for both parties. For the rest of the crowd it is wasted time. The presenter isn't given a great way to connect with you again outside of a Hail Mary Google search.
 - **Unasked Questions**: Not just the raised hands that never get chosen. There are tens or hundreds of questions, great questions, locked away in the heads of those unwilling to raise their hands. Maybe they're nervous. Maybe they think their question is stupid. We'll never know.
@@ -40,7 +40,7 @@ Odds are if you've been to a conference you've been to *that* conference, sat in
 
 Let's look at my complaints once again.
 
-- **Question Quality**: Questions are now seen beforehand and voted on by the crowd. Good questions and questions that many people have float to the top.
+- **Question Quality**: Questions are now seen beforehand and voted on by the crowd. High quality popular questions float to the top.
 - **Question Selection**: The idea of the presenter selecting a questioner is almost completely discarded. Selection is moved to the collective audience. The presenter does have final say on what's answered, as they could just skip over a highly upvoted question, but the crowd will be aware of what questions were skipped, which is interesting information as well.
 - **Time Management**: Typing the question gives questioners the ability to pause, think, and self-edit questions. Presenters can also use their expertise to summarize and rephrase the question when reading it aloud.
 - **Identity**: Questions are presented next to the Twitter thumbnail of the questioner, which links to their Twitter profile. Other audience members are no longer forced to hear the short bio of every questioner. Presenters are given an identity that they can contact after the presentation for followup.
@@ -52,4 +52,4 @@ Tiny Question is free for anyone to use. The source is available on [GitHub](htt
 
 ## Ask Me Questions
 
-Do you have a question about Tiny Question? [Ask it here](http://tinyquestion.com/cd9b) (on Tiny Question) and I will update this post with answers.
+Do you have a question about Tiny Question? <del>Ask it here (on Tiny Question) and I will update this post with answers.</del> Questions are closed. One more thing to note about Tiny Question: All question sessions are deleted 48 hours after creation. The tool is not meant as a permanent place for questions to live, but as an aid to a live event.

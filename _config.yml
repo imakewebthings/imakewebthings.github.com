@@ -2,5 +2,7 @@ exclude:
   - README.md
 markdown: kramdown
 permalink: /blog/:title
-pygments: true
+highlighter: pygments
 safe: true
+sass:
+  sass_dir: css

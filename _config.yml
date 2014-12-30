@@ -4,5 +4,3 @@ markdown: kramdown
 permalink: /blog/:title
 highlighter: pygments
 safe: true
-sass:
-  sass_dir: css

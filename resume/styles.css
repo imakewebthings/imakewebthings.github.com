@@ -4,208 +4,144 @@
   box-sizing:border-box;
 }
 
-body {
-  font-family:'Noto Sans', serif;
-  font-size:16px;
-  line-height:1.4;
-  background:#eee;
-  color:#444;
+html {
+  --tango:#e1523d;
+  --blue-comp:#348ec0;
+  --green-comp:#80cb37;
+  --purp:#b163a3;
 }
 
-a {
-  color:#3b8686;
+body {
+  font-family:'Noto Sans', sans-serif;
+  font-size:13px;
+  line-height:1.4;
+  background:white;
+  color:#555;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:70% 30%;
+  grid-template-rows:1fr;
+  gap:0 0;
+  grid-template-areas:"main aside";
+}
+
+.grid > .left {
+  grid-area:main;
+}
+
+.grid > .right {
+  grid-area:aside;
 }
 
 main {
-  background:#fff;
-  padding:20px 0;
+  padding:0 2em;
 }
 
-header {
-  padding:0 20px;
+aside {
+  background-color:var(--tango);
+  color:rgba(255,255,255,.8);
+  padding-top:.6em;
 }
 
-h1 {
-  font-family: 'Noto Serif', serif;
-  font-size:2em;
-  padding:20px 0 20px 0;
-  margin-bottom:20px;
-  line-height:1;
-  color:#111;
-  border-bottom:1px solid #ddd;
-}
-
-header ul {
-  list-style:none;
-  float:right;
-  background:#eee;
-  border:1px solid #ddd;
-  padding:8px 16px;
-  margin:-72px 0 16px 32px;
-}
-
-header li {
-  line-height:1.5;
-}
-
-header .fa {
-  margin-right:10px;
-  color:#888;
-}
-
-section {
-  padding:0 20px;
-}
-
-h2 {
-  font-family:'Noto Serif', serif;
-  font-size:1.5em;
-  line-height:1;
-  color:#111;
-  margin:32px 0 16px 0;
-}
-
-h2 .fa {
-  margin-right:10px;
-}
-
-.work {
-  background:#eee;
-  padding:16px;
-  margin-bottom:16px;
-  border-left:4px solid rgba(121, 189, 154, 1);
-}
-
-.work + .work {
-  border-left-color:rgba(121, 189, 154, .8);
-}
-
-.work + .work + .work {
-  border-left-color:rgba(121, 189, 154, .6);
-}
-
-.work + .work + .work + .work {
-  border-left-color:rgba(121, 189, 154, .4);
-}
-
-.work + .work + .work + .work + .work {
-  border-left-color:rgba(121, 189, 154, .2);
-}
-
-.work ul {
-  margin-left:24px;
-}
-
-.work ul.inline-daterange {
+aside ul {
   list-style:none;
   margin-left:0;
 }
 
-.inline-daterange li {
-  margin-bottom:5px;
+aside h2 {
+  color:#fff;
+  background:rgba(0,0,0,.3);
+  padding-top:0.25em;
+  padding-bottom:0.25em;
 }
 
-.inline-daterange span {
-  color:#666;
+h1 {
+  font-size:2em;
+  margin:1em 0 0.5em 0;
+  color:#111;
 }
 
-.work h3 {
-  margin-bottom:0;
+h2 {
+  font-size:1.5em;
+  color:#111;
+  margin-bottom:0.5em;
+  margin-top:1em;
 }
 
-.work h4 {
-  margin-top:4px;
+p, ul {
+  margin:1em 0;
+}
+
+ul {
+  margin-left:1em;
+}
+
+aside a {
+  color:#fff;
+  text-decoration:underline;
+}
+aside a:hover {
+  background-color:rgba(0,0,0,.3);
+}
+
+.contact .fa {
+  margin-right:0.5em;
+}
+
+aside h3 {
+  font-size:1em;
+  color:#fff;
+}
+
+.guttered {
+  padding-left:16px;
+  padding-right:16px;
+}
+
+.work {
+  margin-bottom:1em;
+}
+
+.work .left {
+  padding-right:1em;
+}
+
+.technologies {
+  background-color:var(--blue-comp);
+  color:rgba(255,255,255,0.8);
+  margin-top:1em;
+}
+
+.technologies h4 {
+  color:#fff;
+  padding-top:0.25em;
+  padding-bottom:0.25em;
+  background-color:rgba(0,0,0,.3);
+}
+
+.technologies ul {
+  list-style:none;
   font-size:0.875em;
-  font-weight:normal;
-  color:#666;
+  margin:0;
+  padding-top:0.5em;
+  padding-bottom:0.5em;
 }
 
-.work h4 + h4 {
-  margin-bottom:8px;
-  padding-bottom:8px;
-  border-bottom:1px solid rgba(0,0,0,.1);
-}
+.footnote {
+  border-top:1px solid rgba(0,0,0,.3);
 
-.work:last-child {
-  margin-bottom:0;
-}
-
-.work .daterange {
-  float:right;
-}
-
-.fa-info-circle, .fa-wrench, .fa-mortar-board {
-  color:#888;
-}
-
-.print-label {
+.print-only {
   display:none;
 }
 
-main.cover p {
-  margin:24px 0;
-}
-
-@media screen and (min-width:960px) {
-  main {
-    width:960px;
-    margin:10px auto;
-    box-shadow:2px 2px 10px rgba(0,0,0,.3);
-    padding-left:20px;
-    padding-right:20px;
-  }
-}
-
-@media screen and (max-width:768px) {
-  header ul {
-    float:none;
-    margin-left:0;
-    margin-top:0;
-  }
-}
-
 @media print {
-  body {
-    font-size:9pt;
-    background:#fff;
+  .print-only {
+    display:block;
   }
 
-  header {
-    margin-bottom:10px;
-  }
-
-  h1 {
-    padding-bottom:10px;
-    padding-top:10px;
-  }
-
-  h2 {
-    margin-top:24px;
-  }
-
-  a {
-    text-decoration:none;
-  }
-
-  .print-label {
-    display:inline;
-  }
-
-  .work {
-    padding-top:0;
-    margin-bottom:6px;
-  }
-
-  .work h4 {
-    margin-top:-1px;
-  }
-
-  .work h4 + h4 {
-    border-bottom:0;
-    padding-bottom:0;
-  }
-
-  .work ul {
-    margin-left:12px;
+  .screen-only {
+    display:none;
   }
 }

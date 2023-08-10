@@ -12,79 +12,167 @@
   </head>
 
   <body>
-    <main>
-      <header>
+    <div class='grid'>
+      <main class='left'>
         <h1>Caleb Troughton</h1>
-        <ul>
-          <li><span class="fa fa-envelope fa-fw"></span><span class="print-label">Email: </span><a href="mailto:caleb@imakewebthings.com">caleb@imakewebthings.com</a></li>
-          <li><span class="fa fa-globe fa-fw"></span><span class="print-label">Website: </span><a href="http://imakewebthings.com" targer="_blank">http://imakewebthings.com</a></li>
-          <li><span class="fa fa-github fa-fw"></span><span class="print-label">GitHub: </span><a href="https://github.com/imakewebthings" target="_blank">imakewebthings</a></li>
-          <li><span class="fa fa-phone fa-fw"></span><span class="print-label">Phone: </span>503-891-5873</li>
-        </ul>
-      </header>
+        <p>I am a multidisciplinary Software Engineer with over 17 years of industry experience, currently focused on internal platforms and developer tooling. From discovery to planning to shipping code, I love to own high impact solutions to problems Engineers face in delivering their products.</p>
 
-      <section>
-        <h2><span class="fa fa-fw fa-info-circle"></span>Introduction</h2>
-        <p>Caleb is a multidisciplinary builder passionate about bringing better user experiences to developers. His career has taken him from UI and full stack development, to internal infrastructure platform development, to product and program management.</p>
-      </section>  
+        <h2>Work Experience</h2>
 
-      <section>
-        <h2><span class="fa fa-fw fa-wrench"></span>Work</h2>
-
-        <div class="work">
-          <h3>Mux</h3>
-          <h4 class="daterange">12/2021 - 06/2023</h4>
-          <h4>Technical Program Manager - Platform Engineering</h4>
-          <p>Organized and drove cross-team infrastructure projects around Kubernetes migration, secret management, observability, and GitOps tooling, while introducing processes for planning and executing work on the Platform Engineering team.</p>
+        <div class='work'>
+          <h3>Mux: Technical Program Manager, Platform Engineering</h3>
+          <h4>12/2021 - 06/2023</h4>
+          <div class='grid'>
+            <div class='left'>
+              <ul>
+                <li>Driver of platform-led cross-team projects, including Kubernetes cluster migrations, the adoption of Vault as a secret store, GitOps tooling for cluster bootstrapping and core component management, and AWS Foundational Technical Reviews.</li>
+                <li>Established agile processes with the Platform Engineering team during a transition to distinct squads focused on observability, infrastructure tooling, and developer experience.</li>
+              </ul>
+            </div>
+            <div class='right'>
+              <div class='technologies'>
+                <h4 class='guttered'>Technologies</h4>
+                <ul class='guttered'>
+                  <li>Kubernetes</li>
+                  <li>CAPI + CAPA</li>
+                  <li>Vault</li>
+                  <li>Terraform</li>
+                  <li>Prometheus + Grafana + Jaeger</li>
+                  <li>Bazel</li>
+                  <li>Buildkite</li>
+                  <li>Argo CD + Workflows</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="work">
-          <h3>New Relic</h3>
-          <h4 class="daterange">02/2015 - 12/2021</h4>
-          <h4>Multiple Roles</h4>
-          <ul class="inline-daterange">
-            <li><span>08/2020 - 12/2021</span>: <strong>Product Manager</strong> for our internal developer platform focused on Build &amp; Deploy tooling and lifecycle automation of our cellular Kubernetes infrastructure. Also served as a "NERF", a rotation of senior leaders responsible for incident command in high severity incidents.</li>
-            <li><span>04/2016 - 08/2020:</span> <strong>Senior Software Engineer</strong> with the Build &amp; Deploy Tools team, responsible for the internal developer platform that drove 3500+ weekly deploys of 2500+ services and libraries across multiple container orchestrators and frontend asset systems. Also served as <strong>Technical Product Manager</strong> since 2017.</li>
-            <li><span>02/2015 - 04/2016:</span> <strong>UI Engineer</strong> focused on visualizations of complex microservice architectures and their telemetry.</li>
+        <div class='work'>
+          <h3>New Relic: Product Manager</h3>
+          <h4>08/2020 - 12/2021</h4>
+          <div class='grid'>
+            <div class='left'>
+              <ul>
+                <li>Managed roadmap for multiple internal-facing teams, collectively responsible for build and deploy, datecenter operation tooling, Kubernetes infrastructure, cloud accounts and access, and production capacity automation.</li>
+                <li>Responsible for automation initiatives across teams during migrations from DC/OS to Kubernetes, on-prem datacenters to cloud hosting, and from a large single-cluster to multi-cluster cellular production topology.</li>
+                <li>Served as a "NERF", a rotation of senior leaders responsible for incident command in high severity production incidents.</li>
+              </ul>
+            </div>
+            <div class='right'>
+              <div class='technologies'>
+                <h4 class='guttered'>Technologies</h4>
+                <ul class='guttered'>
+                  <li>Kubernetes</li>
+                  <li>Terraform</li>
+                  <li>Argo CD + Workflows</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='work'>
+          <h3>New Relic: Senior Software Engineer</h3>
+          <h4>02/2015 - 08/2020</h4>
+          <div class='grid'>
+            <div class='left'>
+              <ul>
+                <li>4.5 years as a member of the Build &amp; Deploy Tools team, responsible for internal platform tooling used across all Engineering teams. Our systems enabled thousands of microservices, frontend assets, and infrastructure as code projects to be continuously delivered to multiple production targets thousands of times each week.</li>
+                <li>Simultaneously served 3 years as Technical Product Manager for the team, working with Engineering Managers, Product Managers, Program Managers, and other leaders to drive the team's roadmap.</li>
+                <li>Architected a distributed plugin system for deploys to allow rapid experimentation and expansion of internal tooling to new systems.</li>
+                <li>Led user interface development for our central internal deploy tool.</li>
+                <li>1 year as a member of the APM team focused on Service Maps, a tool for visualizing complex microservice architectures and their communication patterns.</li>
+              </ul>
+            </div>
+            <div class='right'>
+              <div class='technologies'>
+                <h4 class='guttered'>Technologies</h4>
+                <ul class='guttered'>
+                  <li>Go</li>
+                  <li>JavaScript (React + Redux, Angular)</li>
+                  <li>Kubernetes</li>
+                  <li>Argo CD + Worklows + Events + Rollouts</li>
+                  <li>Jenkins</li>
+                  <li>Terraform + Atlantis</li>
+                  <li>Marathon + Mesos</li>
+                  <li>New Relic</li>
+                  <li>Ruby on Rails</li>
+                  <li>CSS (SASS)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='work'>
+          <h3>Fat Arrow: Full Stack Engineer</h3>
+          <h4>04/2009 - 02/2015</h4>
+          <div class='grid'>
+            <div class='left'>
+              <p>Owner/operator of an independent consultant business with a wide range of projects from startup MVPs, to E-commerce platforms, to open source research and development using Ruby on Rails and various JavaScript frameworks. Client list available upon request.</p>
+            </div>
+            <div class='right'>
+              <div class='technologies'>
+                <h4 class='guttered'>Technologies</h4>
+                <ul class='guttered'>
+                  <li>Ruby on Rails</li>
+                  <li>JavaScript (Backbone)</li>
+                  <li>CSS</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='work'>
+          <h3>Rosetta: Front End Engineer</h3>
+          <h4>10/2006 - 02/2010</h4>
+          <p>UI engineering on Blackberry and Apple accounts.</p>
+        </div>
+
+        <div class='work'>
+          <h3>CADRC: Java Engineer</h3>
+          <h4>08/2005 - 10/2006</h4>
+          <p>Interface development on cargo ship stowage planning software used by the Department of Defense.</p>
+        </div>
+      </main>
+
+      <aside class='right'>
+        <div class='contact'>
+          <h2 class='guttered'>Contact</h2>
+          <ul class='guttered'>
+            <li><span class='fa fa-envelope fa-fw' title='Email'></span><a href='mailto:caleb@imakewebthings.com'>caleb@imakewebthings.com</a></li>
+            <li><span class='fa fa-globe fa-fw' title='Website'></span><a href='http://imakewebthings.com'>http://imakewebthings.com</a></li>
+            <li><span class='fa fa-github fa-fw' title='GitHub'></span><a href='https://github.com/imakewebthings'>imakewebthings</a></li>
+            <li><span class='fa fa-phone fa-fw' title='Phone'></span><a href='tel:5038915873'>503-891-5873</a></li>
           </ul>
         </div>
 
-        <div class="work">
-          <h3>Fat Arrow LLC</h3>
-          <h4 class="daterange">04/2009 - 02/2015</h4>
-          <h4>Owner/operator</h4>
-          <p>Independent full-stack development ranging from startup MVPs, to E-commerce platforms, to open source R&amp;D. Clients included:</p>
-          <ul>
-            <li>Harvard University (Library Innovation Lab, Business School, and Harvard Law Islamic Legal Studies)</li>
-            <li>Syndeca</li>
-            <li>Fluid Inc. (acquired by Astound Commerce)</li>
-          </ul>
-        </div>
+        <h2 class='guttered'>Education</h2>
 
-        <div class="work">
-          <h3>Rosetta (Publicis Sapient)</h3>
-          <h4 class="daterange">10/2006 - 02/2010</h4>
-          <h4>UI Developer</h4>
-          <p>Frontend engineering for Blackberry and Apple accounts.</p>
-        </div>
-
-        <div class="work">
-          <h3>Collaborative Agent Design Research Center (CADRC)</h3>
-          <h4 class="daterange">08/2005 - 10/2006</h4>
-          <h4>Student Engineer</h4>
-          <p>Java interface development on cargo ship stowage planning software used by the Department of Defense.</p>
-        </div>
-      </section>
-
-      <section>
-        <h2><span class="fa fa-fw fa-mortar-board"></span>Education</h2>
-        <div class="work">
+        <div class='guttered'>
           <h3>California Polytechnic State University, San Luis Obispo</h3>
-          <p>2003-2008. Computer Science major. No degree earned.</p>
+          <h4>2003 - 2008</h4>
+          <p>Computer Science Major. No degree.</p>
         </div>
-      </section>
-    </main>
+
+        <h2 class='guttered'>Speaking</h2>
+
+        <div class='guttered'>
+          <h3><a href='https://www.cncf.io/online-programs/argo-real-enterprise-scale-with-k8s/' target='_blank'>Argo: Real Enterprise-scale with k8s</a></h3>
+          <h4>12/2020</h4>
+          <p>CNCF webinar where myself, Al Kemner, and Daniel Jimbel share how New Relic uses various components of the Argo project to manage Kubernetes clusters, gate canary deploys with metric analysis, and safely execute Terraform pipelines.</p>
+
+          <h3>FutureStack Roadshows: Dallas, Toronto, and New York</h3>
+          <h4>10/2018 - 01/2019</h4>
+          <p>Unrecorded talks on the benefits of dramatically increased deployment frequency and lower production lead time, using existing manual human actions as a basis for building the automation necessary to achieve it.</p>
+        </div>
+
+        <div class='guttered footnote'>
+          <p class='print-only'>This CV can be viewed at <a href='http://imakewebthings.com/resume'>http://imakewebthings.com/resume</a>.</p>
+          <p class='screen-only'>This CV can <a href='javascript:window.print()'>printed</a>.</p>
+        </div>
+      </aside>
+    </div>
   </body>
 </html>
-
-

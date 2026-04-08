@@ -131,6 +131,7 @@ aside h3 {
 
 .footnote {
   border-top:1px solid rgba(0,0,0,.3);
+}
 
 .print-only {
   display:none;
@@ -143,5 +144,17 @@ aside h3 {
 
   .screen-only {
     display:none;
+  }
+
+  .page-break {
+    break-before:page;
+  }
+
+  .next-page {
+    margin-top:24px;
+  }
+
+  .footnote a {
+    font-size:0.8em;
   }
 }

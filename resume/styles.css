@@ -138,6 +138,11 @@ aside h3 {
 }
 
 @media print {
+  html {
+    --tango:#444;
+    --blue-comp:#444;
+  }
+
   .print-only {
     display:block;
   }
